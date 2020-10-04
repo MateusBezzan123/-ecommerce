@@ -22,7 +22,7 @@ export default function AppList({ route, navigation }) {
             <AppItem
               key={item.id}
               id={item.id}
-              item={item.quantidade + "  de " + item.descricao}
+              item={item.quantidade + "  de games " + item.descricao}
               navigation={navigation}
             />
           );

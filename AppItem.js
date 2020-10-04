@@ -7,6 +7,36 @@ export default function AppItem(props) {
     const item = await Database.getItem(props.id);
     props.navigation.navigate("AppForm", item);
   }
+  function handleDeletePress() {
+    Alert.alert(
+      "Atenção",
+      "Você tem certeza que deseja excluir este item?",
+      [
+        {
+          text: "Não",
+          onPress: () => console.log("Cancel Pressed"),
+          style: "cancel",
+        },
+        { text: "Sim", onPress: () => console.log(`${props.id} deleted`) },
+      ],
+      { cancelable: false }
+    );
+  }
+  function handleDeletePress() {
+    Alert.alert(
+      "Atenção",
+      "Você tem certeza que deseja excluir este item?",
+      [
+        {
+          text: "Não",
+          onPress: () => console.log("Cancel Pressed"),
+          style: "cancel",
+        },
+        { text: "Sim", onPress: () => console.log(`${props.id} deleted`) },
+      ],
+      { cancelable: false }
+    );
+  }
   return (
     <View style={styles.container}>
       <Text style={styles.textItem}>{props.item}</Text>

@@ -33,7 +33,7 @@ export default function AppForm({ route, navigation }) {
 
   async function handleButtonPress() {
     const listItem = { descricao, quantidade: parseInt(quantidade) };
-    Database.saveItem(listItem).then((response) =>
+    Database.saveItem(listItem, id).then((response) =>
       navigation.navigate("AppList", listItem)
     );
   }
@@ -44,7 +44,7 @@ export default function AppForm({ route, navigation }) {
         <TextInput
           style={styles.input}
           onChangeText={handleDescriptionChange}
-          placeholder="O que está faltando em casa?"
+          placeholder="Qual jogo gostaria?"
           clearButtonMode="always"
           value={descricao}
         />

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { StatusBar } from "expo-status-bar";
 import {
   StyleSheet,
@@ -7,23 +7,38 @@ import {
   TextInput,
   TouchableOpacity,
 } from "react-native";
-export default function AppForm() {
+export default function AppForm({ navigation }) {
+  const [descricao, setDescricao] = useState("");
+  const [quantidade, setQuantidade] = useState("");
+
+  function handleDescriptionChange(descricao) {
+    setDescricao(descricao);
+  }
+  function handleQuantityChange(quantidade) {
+    setQuantidade(quantidade);
+  }
+  function handleButtonPress() {
+    console.log({ id: new Date().getTime(), descricao, quantidade });
+    navigation.navigate("AppList");
+  }
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Item para comprar</Text>
       <View style={styles.inputContainer}>
         <TextInput
           style={styles.input}
+          onChangeText={handleDescriptionChange}
           placeholder="O que está faltando em casa?"
           clearButtonMode="always"
         />
         <TextInput
           style={styles.input}
+          onChangeText={handleQuantityChange}
           placeholder="Digite a quantidade"
           keyboardType={"numeric"}
           clearButtonMode="always"
         />
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button} onPress={handleButtonPress}>
           <Text style={styles.buttonText}>Salvar</Text>
         </TouchableOpacity>
       </View>

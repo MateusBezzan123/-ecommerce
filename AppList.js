@@ -23,6 +23,7 @@ export default function AppList({ route, navigation }) {
               key={item.id}
               id={item.id}
               item={item.quantidade + "  de " + item.descricao}
+              navigation={navigation}
             />
           );
         })}

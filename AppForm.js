@@ -7,6 +7,7 @@ import {
   TextInput,
   TouchableOpacity,
 } from "react-native";
+import AsyncStorage from "@react-native-community/async-storage";
 export default function AppForm({ navigation }) {
   const [descricao, setDescricao] = useState("");
   const [quantidade, setQuantidade] = useState("");
@@ -20,6 +21,22 @@ export default function AppForm({ navigation }) {
   function handleButtonPress() {
     console.log({ id: new Date().getTime(), descricao, quantidade });
     navigation.navigate("AppList");
+  }
+
+  async function handleButtonPress() {
+    const listItem = {
+      id: new Date().getTime(),
+      descricao,
+      quantidade: parseInt(quantidade),
+    };
+    let savedItems = [];
+    const response = await AsyncStorage.getItem("items");
+
+    if (response) savedItems = JSON.parse(response);
+    savedItems.push(listItem);
+
+    await AsyncStorage.setItem("items", JSON.stringify(savedItems));
+    navigation.navigate("AppList", listItem);
   }
   return (
     <View style={styles.container}>

@@ -34,7 +34,7 @@ export default function AppList({ route, navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#D93600",
+    backgroundColor: "#ADD8E6",
     alignItems: "center",
     justifyContent: "center",
   },

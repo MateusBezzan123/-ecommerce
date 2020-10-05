@@ -51,7 +51,7 @@ export default function AppForm({ route, navigation }) {
         <TextInput
           style={styles.input}
           onChangeText={handleQuantityChange}
-          placeholder="Digite a quantidade"
+          placeholder="Quantos jogos você gostaria de levar?"
           keyboardType={"numeric"}
           clearButtonMode="always"
           value={quantidade.toString()}
@@ -67,7 +67,7 @@ export default function AppForm({ route, navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#D93600",
+    backgroundColor: "#ADD8E6",
     alignItems: "center",
   },
   title: {

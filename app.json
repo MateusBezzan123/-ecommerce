@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "supera-ecommerce",
+    "name": "supera",
     "slug": "supera-ecommerce",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -8,19 +8,22 @@
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#ADD8E6"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
+      "bundleIdentifier": "com.supera.ecommerce",
       "supportsTablet": true
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "android": {
+      "package": "com.supera.ecommerce",
+      "versionCode": 1
     }
   }
 }
